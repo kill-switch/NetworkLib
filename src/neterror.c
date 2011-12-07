@@ -39,7 +39,7 @@ void writeError(int errorcode)
 
 int popTopError()
 {
-	return internalErrorDatabas(0, -1);
+	return internalErrorDatabase(0, -1);
 }
 
 int returnTopError()
