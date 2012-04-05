@@ -3,7 +3,6 @@
 /*
 ***********************************************************************************
 handleCommunicationInput:
-	this function 
 ***********************************************************************************
 */
 
@@ -62,6 +61,7 @@ void *handleCommunicationOutput(void *clientdata)
 	if(iret < 0)
 	{
 		writeError(ERROR_CREATE_THREAD_COMMS_INPUT);
+		return NULL;
 	}
 	
 	int n;

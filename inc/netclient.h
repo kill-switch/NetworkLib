@@ -1,5 +1,5 @@
-#ifndef COMMSTHREADS_H
-#define COMMSTHREADS_H
+#ifndef NETCLIENT_H
+#define NETCLIENT_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -12,7 +12,7 @@
 #include "clientId.h"
 #include "neterror.h"
 
-void *handleCommunicationInput(void *clientdata);
-void *handleCommunicationOutput(void *clientdata);
+clientId_t *createClient(int portno, char *hostname);
+void disconnectClient( clientId_t *thisClient );
 
 #endif

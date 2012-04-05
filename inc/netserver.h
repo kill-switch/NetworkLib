@@ -1,5 +1,5 @@
-#ifndef COMMSTHREADS_H
-#define COMMSTHREADS_H
+#ifndef NETSERVER_H
+#define NETSERVER_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -10,9 +10,11 @@
 #include <netdb.h>
 #include <pthread.h>
 #include "clientId.h"
+#include "serverId.h"
 #include "neterror.h"
 
-void *handleCommunicationInput(void *clientdata);
-void *handleCommunicationOutput(void *clientdata);
+serverId_t *createServer(int portno);
+clientId_t *acceptSingleClient(serverId_t *thisServer);
+void closeServer(serverId_t *thisServer);
 
 #endif

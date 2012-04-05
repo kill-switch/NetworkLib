@@ -1,5 +1,5 @@
-#ifndef COMMSTHREADS_H
-#define COMMSTHREADS_H
+#ifndef NETSERVERMULTIPLE_H
+#define NETSERVERMULTIPLE_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -10,9 +10,11 @@
 #include <netdb.h>
 #include <pthread.h>
 #include "clientId.h"
+#include "serverId.h"
 #include "neterror.h"
 
-void *handleCommunicationInput(void *clientdata);
-void *handleCommunicationOutput(void *clientdata);
+void *acceptMultipleClientThread(void *serverdata);
+int acceptMultipleClient(serverId_t *thisServer);
+clientId_t *isNewClient(serverId_t *thisServer);
 
 #endif
